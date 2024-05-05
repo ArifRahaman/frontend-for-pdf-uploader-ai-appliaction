@@ -25,7 +25,7 @@
 //     const getPdf = async () => {
 //         setLoading(true);
 //         try {
-//             const result = await axios.get("http://localhost:8000/get-files");
+//             const result = await axios.get("BACKEND/get-files");
 //             setAllImage(result.data.data);
 //             setLoading(false);
 //         } catch (error) {
@@ -43,7 +43,7 @@
 
 //         try {
 //             const result = await axios.post(
-//                 "http://localhost:8000/upload-files",
+//                 "BACKEND/upload-files",
 //                 formData,
 //                 {
 //                     headers: { "Content-Type": "multipart/form-data" },
@@ -61,14 +61,14 @@
 //     };
 
 //     const showPdf = (pdf) => {
-//         setPdfFile(`http://localhost:8000/files/${pdf}`);
+//         setPdfFile(`BACKEND/files/${pdf}`);
 //     };
 
 //     const handleEditTitle = async (id, newTitle) => {
 //         setLoading(true);
 //         try {
 //             const result = await axios.put(
-//                 `http://localhost:8000/update-title/${id}`,
+//                 `BACKEND/update-title/${id}`,
 //                 { title: newTitle }
 //             );
 //             if (result.data.status === "ok") {
@@ -87,7 +87,7 @@
 //         setLoading(true);
 //         try {
 //             const result = await axios.delete(
-//                 `http://localhost:8000/delete-file/${id}`
+//                 `BACKEND/delete-file/${id}`
 //             );
 //             if (result.data.status === "ok") {
 //                 alert("PDF Deleted Successfully!!!");
@@ -224,6 +224,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { pdfjs } from "react-pdf";
 import PdfComp from "../PdfComp";
+const BACKEND = import.meta.env.VITE_NEXT_PUBLIC_BACKEND_ROUTE;
 // import { toast } from "react-toastify";
 import toast, { Toaster } from 'react-hot-toast';
 import '@fontsource/baloo-bhai-2';
@@ -249,7 +250,7 @@ function App() {
     const getPdf = async () => {
         setLoading(true);
         try {
-            const result = await axios.get("http://localhost:8000/get-files");
+            const result = await axios.get("BACKEND/get-files");
             setAllImage(result.data.data);
             setLoading(false);
         } catch (error) {
@@ -267,7 +268,7 @@ function App() {
 
         try {
             const result = await axios.post(
-                "http://localhost:8000/upload-files",
+                "BACKEND/upload-files",
                 formData,
                 {
                     headers: { "Content-Type": "multipart/form-data" },
@@ -287,14 +288,14 @@ function App() {
     };
 
     const showPdf = (pdf) => {
-        setPdfFile(`http://localhost:8000/files/${pdf}`);
+        setPdfFile(`BACKEND/files/${pdf}`);
     };
 
     const handleEditTitle = async (id, newTitle) => {
         setLoading(true);
         try {
             const result = await axios.put(
-                `http://localhost:8000/update-title/${id}`,
+                `BACKEND/update-title/${id}`,
                 { title: newTitle }
             );
             if (result.data.status === "ok") {
@@ -314,7 +315,7 @@ function App() {
         setLoading(true);
         try {
             const result = await axios.delete(
-                `http://localhost:8000/delete-file/${id}`
+                `BACKEND/delete-file/${id}`
             );
             if (result.data.status === "ok") {
                 // alert("PDF Deleted Successfully!!!");
