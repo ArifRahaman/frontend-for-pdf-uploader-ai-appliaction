@@ -286,18 +286,21 @@ const useSignUp = () => {
     // setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8000/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username,
-          email,
-          universityname,
-          dob,
-          password,
-          cpassword,
-        }),
-      });
+      const response = await fetch(
+        "https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/signup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            username,
+            email,
+            universityname,
+            dob,
+            password,
+            cpassword,
+          }),
+        }
+      );
 
       const data = await response.json();
       // setLoading(false);

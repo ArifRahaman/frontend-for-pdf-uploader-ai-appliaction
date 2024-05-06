@@ -149,7 +149,7 @@ const Dashboard = () => {
         formData.append('profileImage', selectedFile);
 
         try {
-            const response = await axios.post('BACKEND/upload-profile-image', formData, {
+            const response = await axios.post('https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/upload-profile-image', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -176,7 +176,7 @@ const Dashboard = () => {
 
     const handleSubmit = async (field) => {
         try {
-            const res = await fetch(`BACKEND/user/${userData._id}`, {
+            const res = await fetch(`https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/user/${userData._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

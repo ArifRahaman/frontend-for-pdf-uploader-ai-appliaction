@@ -25,7 +25,7 @@
 //     const getPdf = async () => {
 //         setLoading(true);
 //         try {
-//             const result = await axios.get("BACKEND/get-files");
+//             const result = await axios.get("https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/get-files");
 //             setAllImage(result.data.data);
 //             setLoading(false);
 //         } catch (error) {
@@ -43,7 +43,7 @@
 
 //         try {
 //             const result = await axios.post(
-//                 "BACKEND/upload-files",
+//                 "https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/upload-files",
 //                 formData,
 //                 {
 //                     headers: { "Content-Type": "multipart/form-data" },
@@ -61,14 +61,14 @@
 //     };
 
 //     const showPdf = (pdf) => {
-//         setPdfFile(`BACKEND/files/${pdf}`);
+//         setPdfFile(`https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/files/${pdf}`);
 //     };
 
 //     const handleEditTitle = async (id, newTitle) => {
 //         setLoading(true);
 //         try {
 //             const result = await axios.put(
-//                 `BACKEND/update-title/${id}`,
+//                 `https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/update-title/${id}`,
 //                 { title: newTitle }
 //             );
 //             if (result.data.status === "ok") {
@@ -87,7 +87,7 @@
 //         setLoading(true);
 //         try {
 //             const result = await axios.delete(
-//                 `BACKEND/delete-file/${id}`
+//                 `https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/delete-file/${id}`
 //             );
 //             if (result.data.status === "ok") {
 //                 alert("PDF Deleted Successfully!!!");
@@ -224,7 +224,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { pdfjs } from "react-pdf";
 import PdfComp from "../PdfComp";
-const BACKEND = import.meta.env.VITE_NEXT_PUBLIC_BACKEND_ROUTE;
+// const https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com = import.meta.env.VITE_NEXT_PUBLIC_BACKEND_ROUTE;
 // import { toast } from "react-toastify";
 import toast, { Toaster } from 'react-hot-toast';
 import '@fontsource/baloo-bhai-2';
@@ -250,7 +250,7 @@ function App() {
     const getPdf = async () => {
         setLoading(true);
         try {
-            const result = await axios.get("BACKEND/get-files");
+            const result = await axios.get("https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/get-files");
             setAllImage(result.data.data);
             setLoading(false);
         } catch (error) {
@@ -268,7 +268,7 @@ function App() {
 
         try {
             const result = await axios.post(
-                "BACKEND/upload-files",
+                "https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/upload-files",
                 formData,
                 {
                     headers: { "Content-Type": "multipart/form-data" },
@@ -288,14 +288,14 @@ function App() {
     };
 
     const showPdf = (pdf) => {
-        setPdfFile(`BACKEND/files/${pdf}`);
+        setPdfFile(`https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/files/${pdf}`);
     };
 
     const handleEditTitle = async (id, newTitle) => {
         setLoading(true);
         try {
             const result = await axios.put(
-                `BACKEND/update-title/${id}`,
+                `https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/update-title/${id}`,
                 { title: newTitle }
             );
             if (result.data.status === "ok") {
@@ -315,7 +315,7 @@ function App() {
         setLoading(true);
         try {
             const result = await axios.delete(
-                `BACKEND/delete-file/${id}`
+                `https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/delete-file/${id}`
             );
             if (result.data.status === "ok") {
                 // alert("PDF Deleted Successfully!!!");

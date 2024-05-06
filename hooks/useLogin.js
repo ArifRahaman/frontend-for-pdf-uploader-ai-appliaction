@@ -16,16 +16,19 @@ const useLogin = () => {
       //     headers: { "Content-Type": "application/json" },
       //     body: JSON.stringify({ email, password }),
       //   });
-      const res = await fetch("BACKEND/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*", // Allow requests from all origins (replace * with specific origin if needed)
-          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE", // Allow specific HTTP methods
-          "Access-Control-Allow-Headers": "Content-Type, Authorization", // Allow specific headers
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const res = await fetch(
+        "https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*", // Allow requests from all origins (replace * with specific origin if needed)
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE", // Allow specific HTTP methods
+            "Access-Control-Allow-Headers": "Content-Type, Authorization", // Allow specific headers
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       const data = await res.json();
 

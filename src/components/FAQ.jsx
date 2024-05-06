@@ -9,7 +9,7 @@ const AboutUs = () => {
 
     const fetchUserCount = async () => {
         try {
-            const response = await axios.get("BACKEND/api/users/count");
+            const response = await axios.get("https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/api/users/count");
 
             if (response.status !== 200) {
                 throw new Error("Failed to fetch user count");
@@ -27,7 +27,7 @@ const AboutUs = () => {
     }, []); // Run once on component mount
     const fetchPdfCount = async () => {
         try {
-            const response = await axios.get("BACKEND/api/users/pdf");
+            const response = await axios.get("https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/api/users/pdf");
 
             if (response.status !== 200) {
                 throw new Error("Failed to fetch user count");
