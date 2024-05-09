@@ -287,7 +287,7 @@ const useSignUp = () => {
 
     try {
       const response = await fetch(
-        "https://backend-for-pdf-uploader-ai-appliaction-1.onrender.com/signup",
+        "https://backend-for-pdf-uploader-ai-appliaction-2.onrender.com/signup",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
